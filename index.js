@@ -50,7 +50,7 @@ restService.post('/hook', function (req, res) {
 		     }
 		 	    
 		    
- 	    // Got the response from custom search
+ 	    // Got the response from custom search.
  	    console.log('Result: ' + resp.searchInformation.formattedTotalResults);
  	    if (resp.items && resp.items.length > 0) {
 	       
