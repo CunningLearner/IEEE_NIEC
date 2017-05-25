@@ -40,13 +40,6 @@ restService.post('/hook', function (req, res) {
 	    customsearch.cse.list({ cx: CX, q: SEARCH, auth: API_KEY }, function (err, resp) {
 	    if (err) {
   		  return console.log('An error occured', err);
-		  return res.status.json({
-		  status: {
-			  code: 206,
-			  errorType: 'partial_content',
-			  errorDetails: 'I did not understand.You can send your query to us at ieeeniec123@gmail.com . We will revert you back.'
-		  	  }
-		  			     })
 		     }
 		 	    
 		    
