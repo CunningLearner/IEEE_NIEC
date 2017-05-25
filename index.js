@@ -68,8 +68,7 @@ restService.post('/hook', function (req, res) {
             status: {
                 code: 400,
                 errorType: err.message
-		//errorType: "partial_content",
-                //errorDetails: "I didn't understand. You can submit your query to ieeeniec123@gmail.com . We will revert you back!"
+		
             }
         });
     }
