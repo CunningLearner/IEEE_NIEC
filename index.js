@@ -42,33 +42,7 @@ restService.post('/hook', function (req, res) {
 	    if (err) {
   		  return console.log('An error occured', err);
 		     }
-		    
-	    if(resp.spelling){
-  						   //if (resp.spelling.correctedQuery != SEARCH) {
-  console.log(resp.spelling.correctedQuery);
-  SEARCH = resp.spelling.correctedQuery;  
-  customsearch.cse.list({ cx: CX, q: SEARCH, auth: API_KEY }, function (err, resp) {
-  if (err) {
-    return console.log('An error occured', err);
-  }
-
-  // Got the response from custom search
-  console.log('Result: ' + resp.searchInformation.formattedTotalResults);
-  if (resp.items && resp.items.length > 0) {
-  for(i=0;i<1;i++)    				    // Can vary the no.of results to be shown
-console.log('First result name is ' + resp.items[i].title + ' ' + resp.items[i].link );
-
-  }
-
-            var sreed =	resp.items[0].title + ' ' + resp.items[0].snippet + ' ' + resp.items[0].link
-	    return res.json({
-            speech: sreed,
-            displayText: sreed,
-            source: 'apiai-webhook-IOTecosystem'
-	    });
-  			     });
-  		 				}  // finishes nested search  
-		    
+		 	    
 		    
  	    // Got the response from custom search
  	    console.log('Result: ' + resp.searchInformation.formattedTotalResults);
@@ -93,9 +67,9 @@ console.log('First result name is ' + resp.items[i].title + ' ' + resp.items[i].
         return res.status(400).json({
             status: {
                 code: 400,
-                //errorType: err.message
-		errorType: "partial_content",
-                errorDetails: "I didn't understand. You can submit your query to ieeeniec123@gmail.com . We will revert you back!"
+                errorType: err.message
+		//errorType: "partial_content",
+                //errorDetails: "I didn't understand. You can submit your query to ieeeniec123@gmail.com . We will revert you back!"
             }
         });
     }
