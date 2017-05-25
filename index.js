@@ -2,7 +2,6 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const open = require('open');
 
 const restService = express();
 restService.use(bodyParser.json());
